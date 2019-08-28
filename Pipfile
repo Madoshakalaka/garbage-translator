@@ -15,8 +15,6 @@ twine = "*"
 unidecode = "~=1.1"
 typing-extensions = "~=3.7"
 
-[requires]
-python_version = "3.7"
 
 [scripts]
 build = 'python setup.py sdist'

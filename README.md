@@ -1,6 +1,7 @@
 # Garbage Translator
 
-##Usage
+## Usage
+
 ```python
 from garbage_translator import GarbageTranslator as GT
 
@@ -10,7 +11,7 @@ gt.translate("hello darkness my old friend!", 50)
 >>> "hellà dankness mi olt frend!"
 ```
 
-##API
+## API
 
 ```python
 class GarbageTranslator:
