@@ -191,7 +191,12 @@ class GarbageTranslator:
                 less_garbageous: Set[str] = set(searcher.search(regular_word, distance))
                 potential_garbages = more_garbageous - less_garbageous
                 if potential_garbages:
-                    the_garbage = potential_garbages.pop()
+                    for p in potential_garbages:
+                        if p.startswith(regular_word[0]):
+                            the_garbage = p
+                            break
+                    if the_garbage is None:
+                        the_garbage = potential_garbages.pop()
                     break
                 distance -= 1
 
