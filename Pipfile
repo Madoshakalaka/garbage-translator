@@ -10,11 +10,12 @@ mypy = "*"
 pipenv-setup = "*"
 garbage-translator = {path = ".",editable = true}
 twine = "*"
+pytest-cov = "*"
+codecov = "*"
 
 [packages]
 unidecode = "~=1.1"
 typing-extensions = "~=3.7"
-
 
 [scripts]
 build = 'python setup.py sdist'

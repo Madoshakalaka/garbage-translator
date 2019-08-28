@@ -1,0 +1,24 @@
+language: python
+dist: xenial
+install: pipenv install --dev
+script: pytest --cov=pipenv_setup
+after_success: codecov
+stages:
+- test
+- deploy
+jobs:
+  include:
+  - python: '3.7'
+  - python: '3.6'
+  - python: '3.5'
+  - stage: deploy
+    install: pipenv install --dev pipenv-setup
+    script: pipenv-setup sync
+    after_success: ''
+    deploy:
+      provider: pypi
+      user: Madoshakalaka
+      password:
+        secure: a9KZsG6sFxuOIq3iu6Uun6ybwzMCbJXPjBfgOjlYS2CEBDKS/IuRrfmvcm7KxYS1QW/4YDSNe/94BUzZtnots1IUFYgqvESUK1K4NYJ8l9xZv0eyChUASTEKQhiVboEHgzuLTS5EVZbjlCsL7vJjX1ax3cB9MhAplJKKx7OrE6ZEl8CPBEV7xN8Liuin23Op+OJecOII/ICT/1SvFLMRvvHufo/3FkNItqwCLLBF2G+5piapw5PRdlX3Z/THPu9eF3KX4fWtBZxbqRY/KLJNcLMdaGGrE4wMVYCPphiB2sdFINoC0BDQl/zmh/UkuihnuM8QF1XpRFccqWaLXaYFpSr8AB6Ry57LPFtUCpqRANKPfUNsNP/7nIXN5WWp93C8R8qCejuijCBmqV49mtVJ+wCjmgVw2Sdg1YbXu3nlGS/5OT0WqReF4BqbMT66qf559v0MKIwYrAQN3qBL9eI7K5PFX+JrOchzTcs+QMdbAEnRlT+lsK5wAdQNlPlZqkNUJcvSsX+52PgeSPPgrAkcpsGEQffCNlIpNokArCCkbGcz2YBDpfv54hM+rMzGCCyzIA+sU3n/ikVt2E+zJQKiaZ/1sIVW+8eFafIr/vLq7wx+RuSZgcySKBzCjO2viNrVKzICi3+2HIDdUWL0Fp+dF2ne7O3Xted0xXqARQAWxx8=
+      on:
+        tags: true
