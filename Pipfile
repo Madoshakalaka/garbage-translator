@@ -7,7 +7,7 @@ verify_ssl = true
 black = "==19.3b0"
 pytest = "~=5.1"
 mypy = "*"
-pipenv-setup = "*"
+pipenv-setup = {version = '~=2.0', python_version= '>=3.6'}
 garbage-translator = {path = ".",editable = true}
 twine = "*"
 pytest-cov = "*"
