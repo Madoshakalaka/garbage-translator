@@ -9,6 +9,7 @@ pytest = "~=5.1"
 mypy = "*"
 pipenv-setup = "*"
 garbage-translator = {path = ".",editable = true}
+twine = "*"
 
 [packages]
 unidecode = "~=1.1"
