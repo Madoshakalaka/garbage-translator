@@ -1,2 +1,1 @@
-from .main import CorpusImporter
-from .main import GarbageTranslator
+from garbage_translator.main import GarbageTranslator

@@ -211,7 +211,6 @@ class FuzzySearcher(Generic[WordType]):
         :param words: a list of database entries you want to include
         """
         self._words = words
-        self._probes = 0
 
     def search(self, word_string: str, k: int) -> Iterable[WordType]:
         """Uses lookup_func to find all words within levenshtein distance k of word.

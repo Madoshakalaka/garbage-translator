@@ -6,10 +6,17 @@ verify_ssl = true
 [dev-packages]
 black = "==19.3b0"
 pytest = "~=5.1"
+mypy = "*"
+pipenv-setup = "*"
+garbage-translator = {path = ".",editable = true}
 
 [packages]
+unidecode = "~=1.1"
 typing-extensions = "~=3.7"
-unidecode = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+build = 'python setup.py sdist'
+release = 'python -m twine upload dist/*'
