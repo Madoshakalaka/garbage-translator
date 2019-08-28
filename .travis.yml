@@ -1,7 +1,7 @@
 language: python
 dist: xenial
 install: pipenv install --dev
-script: pytest --cov=pipenv_setup
+script: pytest --cov=garbage_translator
 after_success: codecov
 stages:
 - test
